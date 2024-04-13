@@ -136,6 +136,7 @@
         cell.detailTextLabel.numberOfLines = 0;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.imageView.image = [UIImage systemImageNamed:settingData[@"image"]];
+        cell.imageView.tintColor = [UIColor whiteColor];
 
         return cell;
     }
