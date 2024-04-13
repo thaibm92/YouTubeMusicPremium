@@ -108,7 +108,7 @@
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.imageView.image = [UIImage systemImageNamed:@"power"];
-        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.imageView.tintColor = [UIColor whiteColor];
 
         ABCSwitch *masterSwitch = [[NSClassFromString(@"ABCSwitch") alloc] init];
         masterSwitch.onTintColor = [UIColor colorWithRed:30.0/255.0 green:150.0/255.0 blue:245.0/255.0 alpha:1.0];
