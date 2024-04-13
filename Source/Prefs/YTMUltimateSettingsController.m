@@ -59,7 +59,7 @@
     } if (section == 3) {
         NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
         NSString *appVersion = infoDictionary[@"CFBundleShortVersionString"];
-        return [NSString stringWithFormat:@"\nYouTubeMusic: v%@\nYTMusicUltimate: v%@\n\n© Ginsu (@ginsudev) 2021-2024", appVersion, @(OS_STRINGIFY(TWEAK_VERSION))];
+        return [NSString stringWithFormat:@"\nYouTube Music: v%@\n © IOSMOD.NET", appVersion];
     }
 
     return nil;
@@ -81,7 +81,7 @@
         case 2:
             return 1;
         case 3:
-            return 4;
+            return 1;
         default:
             return 0;
     }
@@ -106,12 +106,12 @@
 
         cell.textLabel.text = LOC(@"ENABLED");
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
-        cell.textLabel.textColor = [UIColor colorWithRed:230/255.0 green:75/255.0 blue:75/255.0 alpha:255/255.0];
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.imageView.image = [UIImage systemImageNamed:@"power"];
-        cell.imageView.tintColor = [UIColor colorWithRed:230/255.0 green:75/255.0 blue:75/255.0 alpha:255/255.0];
+        cell.textLabel.textColor = [UIColor whiteColor];
 
         ABCSwitch *masterSwitch = [[NSClassFromString(@"ABCSwitch") alloc] init];
-        masterSwitch.onTintColor = [UIColor colorWithRed:230/255.0 green:75/255.0 blue:75/255.0 alpha:255/255.0];
+        masterSwitch.onTintColor = [UIColor colorWithRed:30.0/255.0 green:150.0/255.0 blue:245.0/255.0 alpha:1.0];
         [masterSwitch addTarget:self action:@selector(toggleMasterSwitch:) forControlEvents:UIControlEventValueChanged];
         masterSwitch.on = [YTMUltimateDict[@"YTMUltimateIsEnabled"] boolValue];
         cell.accessoryView = masterSwitch;
@@ -123,7 +123,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsSection"];
 
         NSArray *settingsData = @[
-            @{@"title": LOC(@"PREMIUM_SETTINGS"), @"image": @"flame"},
+            @{@"title": LOC(@"PREMIUM_SETTINGS"), @"image": @"pencil.slash"},
             @{@"title": LOC(@"PLAYER_SETTINGS"), @"image": @"play.rectangle"},
             @{@"title": LOC(@"THEME_SETTINGS"), @"image": @"paintbrush"},
             @{@"title": LOC(@"NAVBAR_SETTINGS"), @"image": @"sidebar.trailing"},
@@ -163,16 +163,13 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"linkSection"];
 
         NSArray *settingsData = @[
-            @{@"text": [NSString stringWithFormat:LOC(@"TWITTER"), @"Ginsu"],  @"detail": LOC(@"TWITTER_DESC"), @"image": @"ginsu-24@2x"},
-            @{@"text": [NSString stringWithFormat:LOC(@"TWITTER"), @"Dayanch96"], @"detail": LOC(@"TWITTER_DESC"), @"image": @"dayanch96-24@2x"},
-            @{@"text": LOC(@"DISCORD"), @"detail": LOC(@"DISCORD_DESC"), @"image": @"discord-24@2x"},
-            @{@"text": LOC(@"SOURCE_CODE"), @"detail": LOC(@"SOURCE_CODE_DESC"), @"image": @"github-24@2x"}
+            @{@"text": [NSString stringWithFormat:LOC(@"TWITTER"), @"IOSMOD.NET"],  @"detail": LOC(@"TWITTER_DESC"), @"image": @"iosmod-24@2x"}
         ];
 
         NSDictionary *settingData = settingsData[indexPath.row];
 
         cell.textLabel.text = settingData[@"text"];
-        cell.textLabel.textColor = [UIColor systemBlueColor];
+        cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.adjustsFontSizeToFitWidth = YES;
         cell.detailTextLabel.text = settingData[@"detail"];
         cell.detailTextLabel.numberOfLines = 0;
@@ -241,10 +238,7 @@
     }
 
     if (indexPath.section == 3) {
-        NSArray *urls = @[@"https://twitter.com/ginsudev",
-                        @"https://twitter.com/dayanch96",
-                        @"https://discord.com/invite/BhdUyCbgkZ",
-                        @"https://github.com/ginsudev/YTMusicUltimate"];
+        NSArray *urls = @[@"https://iosmod.net"];
 
         if (indexPath.row >= 0 && indexPath.row < urls.count) {
             NSURL *url = [NSURL URLWithString:urls[indexPath.row]];
@@ -259,7 +253,7 @@
 
 #pragma mark - Nav bar stuff
 - (NSString *)title {
-    return @"YTMusicUltimate";
+    return @"YouTube Music Premium";
 }
 
 - (void)closeButtonTapped:(id)sender {
