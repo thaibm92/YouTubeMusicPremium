@@ -16,6 +16,14 @@ on:
         default: "https://iosmod.net/IPAs/YouTube_Music_6.47.3.ipa"
         required: true
         type: string    
+      youtube_music_version:
+        default: "6.17.3"
+        required: true
+        type: string
+      teawk_version:
+        default: "2.0.7"
+        required: true
+        type: string   
   
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -123,7 +131,7 @@ jobs:
           cd Payload/YoutubeMusic.app
           rm -rf Watch
           cd ../..
-          zip -r YouTubeMusicPremium.ipa Payload
+          zip -r YouTube_Music_Premium_.ipa Payload
           rm -rf Payload    
 
       - name: Create Release
