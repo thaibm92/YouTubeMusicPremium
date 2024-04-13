@@ -2,12 +2,18 @@
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
 name: Build and Release YouTube Music Premium
+
 on:
   workflow_dispatch:
-    inputs: 
+    inputs:
+      sdk_version:
+        description: "iOS SDK version to be used during build (don't change it if you don't know what you are doing)"
+        default: "16.2"
+        required: true
+        type: string   
       decrypted_youtube_music_url:
-        description: "The direct URL to the decrypted YouTube Music ipa (Upload a decrypted .ipa file to Dropbox and input its URL here.)"
-        default: "https://iosmod.net/IPAs/YouTube_Music_6.47.3.ipa"
+        description: "The direct URL to the decrypted YouTube Music ipa (I recommend using Dropbox, Google Drive is causing errors)"
+        default: "https://iosmod.net/IPAs/YouTube_Music_6.44.2.ipa"
         required: true
         type: string    
   
