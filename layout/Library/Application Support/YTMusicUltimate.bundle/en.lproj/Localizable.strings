@@ -1,5 +1,5 @@
 "SETTINGS" = "Settings";
-"ENABLED" = "Enable YTMusicUltimate";
+"ENABLED" = "Enable";
 "ENABLED_DESC" = "Premium features, no ads, background playback, etc.";
 "RESTART_FOOTER" = "Restart the app to apply changes";
 
@@ -13,9 +13,9 @@
 
 "PLAYER_SETTINGS" = "Player options";
 "DOWNLOAD_AUDIO" = "Download audio";
-"DOWNLOAD_AUDIO_DESC" = "Adds the option to download audio by pressing the YTMUltimate button in the player";
+"DOWNLOAD_AUDIO_DESC" = "Adds the option to download audio by pressing the IOSMOD.NET button in the player";
 "DOWNLOAD_COVER" = "Download cover image";
-"DOWNLOAD_COVER_DESC" = "Adds the option to download cover image by pressing the YTMUltimate button in the player";
+"DOWNLOAD_COVER_DESC" = "Adds the option to download cover image by pressing the IOSMOD.NET button in the player";
 "PLAYBACK_RATE_BUTTON" = "Show playback rate button";
 "PLAYBACK_RATE_BUTTON_DESC" = "Adjust playback speed";
 "SELECTABLE_LYRICS" = "Lyrics text selection";
@@ -81,7 +81,7 @@
 "APPLY_DESC" = "Closes the app to apply changes";
 
 "LINKS" = "Links";
-"TWITTER" = "Follow %@ on Twitter";
+"TWITTER" = "%@";
 "TWITTER_DESC" = "Follow me for updates";
 "DISCORD" = "Join the Discord";
 "DISCORD_DESC" = "Report bugs and request features";
@@ -118,4 +118,4 @@
 "DELETE" = "Delete";
 "RENAME" = "Rename";
 
-"WORKAROUND_REMINDER" = "If you are in a country where premium features are not available, it is advisable to activate the forced premium activation option.\n\nYou can manage this option later in YTMusicUltimate → %@ → %@.\n\nDo you want to enable %@ option now?";
+"WORKAROUND_REMINDER" = "If you are in a country where premium features are not available, it is advisable to activate the forced premium activation option.\n\nYou can manage this option later in IOSMOD.NET → Premium Option → Force enable Premium.\n\nDo you want to enable Premium option now?";
