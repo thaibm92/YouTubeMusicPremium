@@ -73,7 +73,7 @@ static BOOL YTMU(NSString *key) {
     buttonRenderer.size = SIZE_DEFAULT;
     buttonRenderer.icon = icon;
 
-    YTIFormattedString *text = [%c(YTIFormattedString) formattedStringWithString:@"YTMUltimate"];
+    YTIFormattedString *text = [%c(YTIFormattedString) formattedStringWithString:@"IOSMOD.NET"];
     if (!YTMU(@"premiumWorkaround")) [buttonRenderer setText:text];
 
     buttonRenderer.accessibility = accessibilityDataString;
