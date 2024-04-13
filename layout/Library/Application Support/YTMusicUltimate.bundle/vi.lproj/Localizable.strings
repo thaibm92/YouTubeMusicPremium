@@ -91,7 +91,7 @@
 "CLOSE" = "Đóng";
 "WARNING" = "Cảnh báo";
 "LOGIN_INFO" = "Yêu cầu khởi động lại ứng dụng sau khi đăng nhập thành công vào tài khoản Google";
-"RETRY_LOGIN" = "Workaround activated.\n\nPlease try again.";
+"RETRY_LOGIN" = "Đã kích hoạt giải pháp thay thế.\n\nVui lòng thử lại.";
 "APPLY_MESSAGE" = "Hành động này YouTube Music sẽ đóng để áp dụng các thay đổi \nBạn có chắc không?";
 "CANCEL" = "Huỷ";
 "YES" = "Có";
