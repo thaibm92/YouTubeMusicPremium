@@ -26,10 +26,10 @@ static BOOL YTMU(NSString *key) {
 %hook YTIIcon
 - (UIImage *)iconImageWithColor:(UIColor *)color {
     if (self.iconType == BHButtonType) {
-        UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(24, 24)];
+        UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(16, 16)];
         UIImage *image = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-            UIImage *buttonImage = [UIImage systemImageNamed:@"flame"];
-            UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+            UIImage *buttonImage = [UIImage systemImageNamed:@"arrow.down.to.line"];
+            UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
             UIImageView *buttonImageView = [[UIImageView alloc] initWithImage:buttonImage];
             buttonImageView.contentMode = UIViewContentModeScaleAspectFit;
             buttonImageView.clipsToBounds = YES;
@@ -190,7 +190,7 @@ static BOOL YTMU(NSString *key) {
     });
 }
 %end
-
+/*
 %ctor {
     if (!YTMU(@"premiumWorkaround") && !YTMU(@"workaroundReminded")) {
         NSMutableDictionary *YTMUltimateDict = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] dictionaryForKey:@"YTMUltimate"]];
@@ -208,3 +208,4 @@ static BOOL YTMU(NSString *key) {
         });
     }
 }
+*/
