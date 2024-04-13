@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build YTMusicUltimate
+    name: Build YouTube Music Premium
     runs-on: macos-latest
     permissions:
       contents: write
@@ -49,7 +49,7 @@ jobs:
         id: SDK
         uses: actions/cache@v4.0.1
         env:
-          cache-name: iOS-16.2-SDK
+          cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
           path: theos/sdks/
           key: ${{ env.cache-name }}
@@ -60,7 +60,7 @@ jobs:
         run: |
           git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichorn/sdks/
           cd sdks
-          git sparse-checkout set --no-cone iPhoneOS16.2.sdk
+          git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
           mv *.sdk $THEOS/sdks
         env:
@@ -118,14 +118,14 @@ jobs:
           cd Payload/YoutubeMusic.app
           rm -rf Watch
           cd ../..
-          zip -r YTMusicUltimate.ipa Payload
+          zip -r YouTubeMusicPremium.ipa Payload
           rm -rf Payload    
 
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2.0.1
         with:
-          tag_name: YTMusicUltimate-v${{ github.run_number }}
-          name: YTMusicUltimate-v${{ github.run_number }}
+          tag_name: v${{ github.run_number }}
+          name: v${{ github.run_number }}
           files: main/packages/*.ipa
           draft: true
