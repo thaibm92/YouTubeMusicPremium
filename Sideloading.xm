@@ -272,7 +272,7 @@ BOOL isFirstTime = YES;
     }
 }
 %end
-
+/*
 %hook YTMFirstTimeSignInViewController
 - (void)viewDidDisappear:(bool)arg1 {
     %orig;
@@ -283,7 +283,7 @@ BOOL isFirstTime = YES;
     [alertView show];
 }
 %end
-
+*/
 %ctor {
     %init;
     %init(SideloadingFixes);
