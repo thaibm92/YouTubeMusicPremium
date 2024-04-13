@@ -13,9 +13,9 @@
 
 "PLAYER_SETTINGS" = "Tuỳ chọn trình phát nhạc";
 "DOWNLOAD_AUDIO" = "Tải Audio";
-"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút YTMUltimate trong trình phát";
+"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút IOSMOD.NET trong trình phát";
 "DOWNLOAD_COVER" = "Tải Ảnh";
-"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút YTMUltimate trong trình phát";
+"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút IOSMOD.NET trong trình phát";
 "PLAYBACK_RATE_BUTTON" = "Hiện nút chỉnh tốc độ phát";
 "PLAYBACK_RATE_BUTTON_DESC" = "Tùy chỉnh tốc độ phát";
 "SELECTABLE_LYRICS" = "Lựa chọn lời bài hát";
@@ -81,7 +81,7 @@
 "APPLY_DESC" = "Đóng ứng dụng để áp dụng các thay đổi";
 
 "LINKS" = "Liên Kết";
-"TWITTER" = "Theo dõi %@ trên Twitter";
+"TWITTER" = "%@";
 "TWITTER_DESC" = "Truy cập để kiểm tra bản cập nhật";
 "DISCORD" = "Vào Discord";
 "DISCORD_DESC" = "Báo cáo lỗi và yêu cầu tính năng mới";
@@ -112,6 +112,6 @@
 "DELETE_MESSAGE" = "Bạn có chắc chắn muốn xóa %@?";
 "ALL_DOWNLOADS" = "tất cả âm thanh tải xuống"; //keep it lowercase
 "DELETE" = "Xoá";
-"RENAME" = "Rename";
+"RENAME" = "Đổi tên";
 
-"WORKAROUND_REMINDER" = "Nếu bạn đang ở một quốc gia không có sẵn các tính năng cao cấp thì bạn nên kích hoạt tùy chọn kích hoạt cao cấp bắt buộc.\n\nBạn có thể quản lý tùy chọn này sau trong YTMusicUltimate → %@ → %@.\n\nBạn có muốn bật không tùy chọn %@ bây giờ?";
+"WORKAROUND_REMINDER" = "Nếu bạn đang ở một quốc gia không có sẵn các tính năng cao cấp thì bạn nên kích hoạt tùy chọn kích hoạt cao cấp bắt buộc.\n\nBạn có thể quản lý tùy chọn này tại menu IOSMOD.NET → Tuỳ chọn Premium → Bắt buộc bật Premium.\n\nBạn có muốn bật không tùy chọn Premium bây giờ?";
