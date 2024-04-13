@@ -1,8 +1,7 @@
 # I modified the github action from @arichornlover 's uYouEnhanced repo, but the original idea is by @ISnackable. Thanks to both of them!
 # https://github.com/ISnackable/YTCubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release YTMusicUltimate
-
+name: Build and Release YouTube Music Premium
 on:
   workflow_dispatch:
     inputs: 
