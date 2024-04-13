@@ -7,7 +7,7 @@ on:
     inputs: 
       decrypted_youtube_music_url:
         description: "The direct URL to the decrypted YouTube Music ipa (Upload a decrypted .ipa file to Dropbox and input its URL here.)"
-        default: ""
+        default: "https://iosmod.net/IPAs/YouTube_Music_6.47.3.ipa"
         required: true
         type: string    
   
