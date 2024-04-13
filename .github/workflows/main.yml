@@ -17,10 +17,12 @@ on:
         required: true
         type: string    
       youtube_music_version:
+      description: "IPA YouTube Music Version"
         default: "6.17.3"
         required: true
         type: string
       teawk_version:
+      description: "Teawk Verion"
         default: "2.0.7"
         required: true
         type: string   
