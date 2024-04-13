@@ -248,7 +248,7 @@ BOOL isFirstTime = YES;
 @interface SFAuthenticationViewController : UIViewController
 - (void)remoteViewControllerWillDismiss:(id)remoteVC;
 @end
-
+/*
 %hook SFAuthenticationViewController
 - (void)viewDidAppear:(BOOL)animated {
     %orig;
@@ -272,7 +272,7 @@ BOOL isFirstTime = YES;
     }
 }
 %end
-/*
+
 %hook YTMFirstTimeSignInViewController
 - (void)viewDidDisappear:(bool)arg1 {
     %orig;
