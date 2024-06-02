@@ -61,13 +61,20 @@
     [arrDown addObjectsFromArray:arg2];
     [arrDown addObject:button];
 
-    //Remove the subscribe to premium button.
+ /*   //Remove the subscribe to premium button.
     NSMutableArray *arrUp = [[NSMutableArray alloc] init];
     for (YTMAccountButton *yt_button in arg1) {
         if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
             [arrUp addObject:yt_button];
         }
     }
+/*
+
+NSMutableArray *arrUp = [[NSMutableArray alloc] init];
+for (YTMAccountButton *yt_button in arg1) {
+    [arrUp addObject:yt_button.titleLabel.text];
+}
+
 
     //Continue the function with our own parameters.
     %orig(arrUp, arrDown);
