@@ -68,13 +68,20 @@
             [arrUp addObject:yt_button];
         }
     }
-/*
-
-NSMutableArray *arrUp = [[NSMutableArray alloc] init];
-for (YTMAccountButton *yt_button in arg1) {
-    [arrUp addObject:yt_button.titleLabel.text];
-}
-
+*/
+    NSMutableArray *arrUp = [[NSMutableArray alloc] init];
+    for (YTMAccountButton *yt_button in arg1) {
+        NSString *labelText = [yt_button.titleLabel text];
+        if (![labelText containsString:@"Premium"]) {
+            [arrUp addObject:labelText];
+        }
+    }
+  /*  
+    NSMutableArray *arrUp = [[NSMutableArray alloc] init];
+    for (YTMAccountButton *yt_button in arg1) {
+        [arrUp addObject:yt_button.titleLabel.text];
+    }
+*/
 
     //Continue the function with our own parameters.
     %orig(arrUp, arrDown);
