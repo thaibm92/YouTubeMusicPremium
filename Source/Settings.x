@@ -71,9 +71,8 @@
 */
     NSMutableArray *arrUp = [[NSMutableArray alloc] init];
     for (YTMAccountButton *yt_button in arg1) {
-        NSString *labelText = [yt_button.titleLabel text];
-        if (![labelText containsString:@"Premium"]) {
-            [arrUp addObject:labelText];
+        if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
+            [arrUp addObject:yt_button.titleLabel.text];
         }
     }
   /*  
