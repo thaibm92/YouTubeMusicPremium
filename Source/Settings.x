@@ -61,26 +61,23 @@
     [arrDown addObjectsFromArray:arg2];
     [arrDown addObject:button];
 
- /*   //Remove the subscribe to premium button.
+    // Remove the subscribe to premium button on old versions
     NSMutableArray *arrUp = [[NSMutableArray alloc] init];
     for (YTMAccountButton *yt_button in arg1) {
         if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
             [arrUp addObject:yt_button];
         }
     }
-*/
-    NSMutableArray *arrUp = [[NSMutableArray alloc] init];
-    for (YTMAccountButton *yt_button in arg1) {
-        if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
-            [arrUp addObject:yt_button.titleLabel.text];
+    // Remove the subscribe to premium button on new versions
+    %hook YTMNavigationDrawerPromoView
+    - (void)loadModel:(id)model {
+        if ([self._viewControllerForAncestor isKindOfClass:%c(YTMAvatarAccountViewController)]) {
+            return [self removeFromSuperview];
         }
+    
+        %orig(model);
     }
-  /*  
-    NSMutableArray *arrUp = [[NSMutableArray alloc] init];
-    for (YTMAccountButton *yt_button in arg1) {
-        [arrUp addObject:yt_button.titleLabel.text];
-    }
-*/
+    %end
 
     //Continue the function with our own parameters.
     %orig(arrUp, arrDown);
