@@ -68,19 +68,26 @@
             [arrUp addObject:yt_button];
         }
     }
-    // Remove the subscribe to premium button on new versions
-    %hook YTMNavigationDrawerPromoView
-    - (void)loadModel:(id)model {
-        if ([self._viewControllerForAncestor isKindOfClass:%c(YTMAvatarAccountViewController)]) {
-            return [self removeFromSuperview];
-        }
     
-        %orig(model);
-    }
-    %end
-
     //Continue the function with our own parameters.
     %orig(arrUp, arrDown);
+}
+%end
+
+@interface YTMAvatarAccountViewController : UIViewController
+@end
+
+@interface YTMNavigationDrawerPromoView : UIView
+@end
+
+// Remove the subscribe to premium button on new versions
+%hook YTMNavigationDrawerPromoView
+- (void)loadModel:(id)model {
+    if ([self._viewControllerForAncestor isKindOfClass:%c(YTMAvatarAccountViewController)]) {
+        return [self removeFromSuperview];
+    }
+
+    %orig(model);
 }
 %end
 
