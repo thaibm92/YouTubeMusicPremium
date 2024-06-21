@@ -123,7 +123,7 @@ jobs:
           cd Payload/YoutubeMusic.app
           rm -rf Watch
           cd ../..
-          zip -r YouTube_Music_Premium_v.ipa Payload
+          zip -r YouTube_Music_Premium_v.ipa Payload /dev/null
           rm -rf Payload    
 
       - name: Create Release
