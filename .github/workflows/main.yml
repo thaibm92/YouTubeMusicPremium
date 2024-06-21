@@ -132,5 +132,7 @@ jobs:
         with:
           tag_name: v${{ github.run_number }}
           name: v${{ github.run_number }}
-          files: main/packages/*.ipa
+          files: |
+            main/packages/*.deb
+            main/packages/*.ipa
           draft: true
