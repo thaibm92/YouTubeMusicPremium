@@ -5,7 +5,7 @@ on:
     inputs: 
       decrypted_youtube_music_url:
         description: "The direct URL to the decrypted YouTube Music ipa (Upload a decrypted .ipa file to Dropbox and input its URL here.)"
-        default: "https://iosmod.net/IPAs/YouTube_Music_7.25.4.ipa"
+        default: "https://iosmod.net/IPAs/YouTube_Music_7.31.2.ipa"
         required: true
         type: string    
   
@@ -86,13 +86,43 @@ jobs:
           cd ${{ github.workspace }}/main/packages
           tweakName=$(ls)
           cd ${{ github.workspace }}/main
-          cyan -i YouTubeMusic.ipa -o packages/YTMusicUltimate.ipa -uwsf packages/$tweakName
+          cyan -i YouTubeMusic.ipa -o packages/YouTubeMusic.ipa -uwsf packages/$tweakName
 
+      - name: Prepare YouTube Music iPA
+        id: prepare_youtube_music
+        run: |
+          cd ${{ github.workspace }}/main/packages
+          mv YouTubeMusic.ipa YouTubeMusic.zip
+          unzip YouTubeMusic.zip
+          youtubemusic_version=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "Payload/YouTubeMusic.app/Info.plist")
+          echo "==> YouTube Music v$youtubemusic_version Unziped!"
+          echo "youtubemusic_version=${youtubemusic_version}" >> $GITHUB_OUTPUT
+          cd Payload/YoutubeMusic.app
+          rm -rf Watch
+          echo "==> Removed Watch folder"
+          cd ../..
+          zip -r YouTube_Music_Premium_$youtubemusic_version.ipa Payload > /dev/null
+          echo "==> YouTube_Music_Premium_$youtubemusic_version.ipa Ziped!"
+          rm -rf Payload    
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4.3.3
+        with:
+          name: YouTubeMusicPremium_${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
+          path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
+          if-no-files-found: error
+          
+      
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v2.0.6
+        uses: softprops/action-gh-release@v2.0.5
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRAFT: ${{ inputs.create_release }}
         with:
-          tag_name: YTMusicUltimate-v${{ github.run_number }}
-          name: YTMusicUltimate-v${{ github.run_number }}
-          files: main/packages/*.ipa
-          draft: true
+          tag_name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
+          name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
+          files: |
+            main/packages/*.deb
+            main/packages/YouTube_Music_Premium_${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}.ipa
+          draft: ${{ env.DRAFT }}
