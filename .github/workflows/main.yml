@@ -62,7 +62,6 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Prepare YouTube Music iPA
-        id: prepare_youtube_music
         run: wget "$YOUTUBE_MUSIC_URL" --no-verbose -O main/YouTubeMusic.ipa
 
         env:
