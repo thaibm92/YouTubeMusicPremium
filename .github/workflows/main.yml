@@ -105,20 +105,11 @@ jobs:
           rm -rf Payload
           ls
       
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4.3.3
-        with:
-          name: YouTubeMusicPremium_${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
-          path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
-          if-no-files-found: error
-          
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2.0.6
         with:
-          tag_name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
-          name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
-          files: |
-            main/packages/*.deb
-            main/packages/*.ipa
-          draft: ${{ env.DRAFT }}
+          tag_name: YTMusicUltimate-v${{ github.run_number }}
+          name: YTMusicUltimate-v${{ github.run_number }}
+          files: main/packages/*.ipa
+          draft: true
