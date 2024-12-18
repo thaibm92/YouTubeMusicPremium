@@ -112,13 +112,9 @@ jobs:
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
           
-      
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v2.0.5
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DRAFT: ${{ inputs.create_release }}
+        uses: softprops/action-gh-release@v2.0.6
         with:
           tag_name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
           name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
