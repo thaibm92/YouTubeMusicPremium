@@ -123,5 +123,5 @@ jobs:
           name: v${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}
           files: |
             main/packages/*.deb
-            main/packages/YouTube_Music_Premium_${{ steps.prepare_youtube_music.outputs.youtubemusic_version }}.ipa
+            main/packages/*.ipa
           draft: ${{ env.DRAFT }}
