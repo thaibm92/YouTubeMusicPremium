@@ -248,7 +248,7 @@ BOOL isFirstTime = YES;
 @interface SFAuthenticationViewController : UIViewController
 - (void)remoteViewControllerWillDismiss:(id)remoteVC;
 @end
-
+/*
 %hook SFAuthenticationViewController
 - (void)viewDidAppear:(BOOL)animated {
     %orig;
@@ -283,7 +283,7 @@ BOOL isFirstTime = YES;
     [alertView show];
 }
 %end
-
+*/
 %ctor {
     %init;
     %init(SideloadingFixes);
