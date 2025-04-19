@@ -11,7 +11,7 @@ PACKAGE_VERSION = 2.3.1
 
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = YTMusicUltimate
+TWEAK_NAME = YouTubeMusicPremium
 
 $(TWEAK_NAME)_FILES = $(shell find Source -name '*.xm' -o -name '*.x' -o -name '*.m')
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -DTWEAK_VERSION=$(PACKAGE_VERSION)
