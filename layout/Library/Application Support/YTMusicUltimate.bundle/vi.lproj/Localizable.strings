@@ -13,9 +13,9 @@
 
 "PLAYER_SETTINGS" = "Tuỳ chọn trình phát nhạc";
 "DOWNLOAD_AUDIO" = "Tải Audio";
-"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút YTMUltimate trong trình phát";
+"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút "Tải Xuống" trong trình phát";
 "DOWNLOAD_COVER" = "Tải Ảnh";
-"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút YTMUltimate trong trình phát";
+"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút "Tải Xuống" trong trình phát";
 "PLAYBACK_RATE_BUTTON" = "Hiện nút chỉnh tốc độ phát";
 "PLAYBACK_RATE_BUTTON_DESC" = "Tùy chỉnh tốc độ phát";
 "SELECTABLE_LYRICS" = "Lựa chọn lời bài hát";
@@ -81,7 +81,7 @@
 "APPLY_DESC" = "Đóng ứng dụng để áp dụng các thay đổi";
 
 "LINKS" = "Liên Kết";
-"TWITTER" = "Theo dõi %@ trên Twitter";
+"TWITTER" = "%@";
 "TWITTER_DESC" = "Truy cập để kiểm tra bản cập nhật";
 "DISCORD" = "Vào Discord";
 "DISCORD_DESC" = "Báo cáo lỗi và yêu cầu tính năng mới";
@@ -101,9 +101,9 @@
 "DONT_RUSH_DESC" = "Bắt buộc phải phát bài hát để trích xuất link";
 "SELECT_ACTION" = "Chọn hành động";
 "DOWNLOADING" = "Đang tải";
-"DOWNLOAD_PREMIUM" = "Download (Premium required)";
+"DOWNLOAD_PREMIUM" = "Tải Xuống (Yêu cầu Premium)";
 "OOPS" = "Rất tiếc\đã xảy ra lỗi";
-"LINK_NOT_FOUND" = "Link not found";
+"LINK_NOT_FOUND" = "Không tìm thấy link";
 "SAVED_TO_PHOTOS" = "Đã lưu vào Ảnh";
 "DONE" = "Xong";
 
@@ -114,4 +114,4 @@
 "DELETE_MESSAGE" = "Bạn có chắc chắn muốn xóa %@?";
 "ALL_DOWNLOADS" = "tất cả âm thanh tải xuống"; //keep it lowercase
 "DELETE" = "Xoá";
-"RENAME" = "Rename";
+"RENAME" = "Đổi tên";
