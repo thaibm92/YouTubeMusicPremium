@@ -79,12 +79,12 @@
 
 - (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
     // Tạo icon có kích thước và style giống biểu tượng hệ thống "Cài đặt"
-    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(24, 24)];
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(22, 22)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:20 weight:UIImageSymbolWeightLight];
+        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:18 weight:UIImageSymbolWeightLight];
         UIImage *gearImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
 
-        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
+        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
         UIImageView *gearImageView = [[UIImageView alloc] initWithImage:gearImage];
         gearImageView.contentMode = UIViewContentModeScaleAspectFit;
         gearImageView.clipsToBounds = YES;
