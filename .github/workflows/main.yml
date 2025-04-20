@@ -85,11 +85,8 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
           
-      - name: Install Azule
-        run: |
-          cd ${{ github.workspace }}/main
-          git clone https://github.com/Al4ise/Azule 
-          sudo ln -sf ~/Azule/azule /usr/local/bin/azule
+      - name: Install cyan
+        run: pipx install --force https://github.com/asdfzxcvbn/pyzule-rw/archive/main.zip
 
       - name: Downloading YouTube Music iPA
         run: |
@@ -108,11 +105,10 @@ jobs:
 
       - name: Inject tweak into provided IPA
         run: |
-          brew install coreutils
           cd ${{ github.workspace }}/main/packages
           tweakName=$(ls)
           cd ${{ github.workspace }}/main
-          ./Azule/azule -i $PWD/YouTubeMusic.ipa -o $PWD/packages/YTMusicUltimate.ipa -f $PWD/packages/$tweakName 
+          cyan -i YouTubeMusic.ipa -o packages/YouTubeMusicPremium.ipa -uwsf packages/$tweakName -n "${{ inputs.display_name }}" -b ${{ inputs.bundle_id }} 
 
       - name: Prepare YouTube Music iPA
         id: prepare_youtube_music
