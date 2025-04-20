@@ -104,9 +104,6 @@
 
     button.tintColor = [UIColor redColor];
 
-    // Nếu cần chỉnh font (tuỳ class hỗ trợ), thêm dòng sau:
-    // button.titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
-
     // Thêm nút vào danh sách phía dưới
     NSMutableArray *arrDown = [[NSMutableArray alloc] init];
     [arrDown addObjectsFromArray:arg2];
