@@ -36,7 +36,7 @@
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
         UIImage *flameImage = [UIImage systemImageNamed:@"gearshape"];
         UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        UIImageView *flameImageView = [[UIImageView alloc] initWithImage:];
+        UIImageView *flameImageView = [[UIImageView alloc] initWithImage:flameImage];
         flameImageView.contentMode = UIViewContentModeScaleAspectFit;
         flameImageView.clipsToBounds = YES;
         flameImageView.tintColor = [UIColor whiteColor];
