@@ -8,7 +8,7 @@ on:
     inputs:
       sdk_version:
         description: "iOS SDK version to be used during build (don't change it if you don't know what you are doing)"
-        default: "17.5"
+        default: "16.5"
         required: true
         type: string   
       decrypted_youtube_music_url:
