@@ -113,7 +113,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/main/packages
           mv YouTubeMusicPremium.ipa YouTubeMusicPremium.zip
-          unzip YouTubeMusicPremium.zip
+          unzip -q YouTubeMusicPremium.zip
           youtubemusic_version=$(/usr/libexec/PlistBuddy -c "Print CFBundleVersion" "Payload/YouTubeMusic.app/Info.plist")
           echo "==> YouTube Music v$youtubemusic_version Unziped!"
           echo "youtubemusic_version=${youtubemusic_version}" >> $GITHUB_OUTPUT
