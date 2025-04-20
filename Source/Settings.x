@@ -34,8 +34,7 @@
 - (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
     UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(20, 20)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:18 weight:UIImageSymbolWeightLight];
-        UIImage *flameImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
+        UIImage *flameImage = [UIImage systemImageNamed:@"gearshape"];
         UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
         UIImageView *flameImageView = [[UIImageView alloc] initWithImage:];
         flameImageView.contentMode = UIViewContentModeScaleAspectFit;
