@@ -35,9 +35,9 @@
     UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(20, 20)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
         UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:18 weight:UIImageSymbolWeightLight];
-        UIImage *gearImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
+        UIImage *flameImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
         UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        UIImageView *flameImageView = [[UIImageView alloc] initWithImage:flameImage];
+        UIImageView *flameImageView = [[UIImageView alloc] initWithImage:];
         flameImageView.contentMode = UIViewContentModeScaleAspectFit;
         flameImageView.clipsToBounds = YES;
         flameImageView.tintColor = [UIColor whiteColor];
