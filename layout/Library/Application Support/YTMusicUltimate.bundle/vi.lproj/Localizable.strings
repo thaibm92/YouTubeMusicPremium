@@ -13,9 +13,9 @@
 
 "PLAYER_SETTINGS" = "Tuỳ chọn trình phát nhạc";
 "DOWNLOAD_AUDIO" = "Tải Audio";
-"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút "Tải Xuống" trong trình phát";
+"DOWNLOAD_AUDIO_DESC" = "Thêm tùy chọn tải xuống âm thanh bằng cách nhấn nút \"Tải Xuống\" trong trình phát";
 "DOWNLOAD_COVER" = "Tải Ảnh";
-"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút "Tải Xuống" trong trình phát";
+"DOWNLOAD_COVER_DESC" = "Thêm tùy chọn tải xuống ảnh bìa bằng cách nhấn nút \"Tải Xuống\" trong trình phát";
 "PLAYBACK_RATE_BUTTON" = "Hiện nút chỉnh tốc độ phát";
 "PLAYBACK_RATE_BUTTON_DESC" = "Tùy chỉnh tốc độ phát";
 "SELECTABLE_LYRICS" = "Lựa chọn lời bài hát";
