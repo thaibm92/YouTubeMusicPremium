@@ -78,13 +78,13 @@
 %hook YTMAvatarAccountView
 
 - (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
-    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(20, 20)];
+    // Tạo icon có kích thước và style giống biểu tượng hệ thống "Cài đặt"
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(24, 24)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-        // Sử dụng cấu hình giống biểu tượng "Cài đặt"
-        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:20 weight:UIImageSymbolWeightThin];
+        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:22 weight:UIImageSymbolWeightLight];
         UIImage *gearImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
 
-        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
         UIImageView *gearImageView = [[UIImageView alloc] initWithImage:gearImage];
         gearImageView.contentMode = UIViewContentModeScaleAspectFit;
         gearImageView.clipsToBounds = YES;
@@ -104,12 +104,15 @@
 
     button.tintColor = [UIColor redColor];
 
-    // Thêm nút vào danh sách dưới
+    // Nếu cần chỉnh font (tuỳ class hỗ trợ), thêm dòng sau:
+    // button.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightRegular];
+
+    // Thêm nút vào danh sách phía dưới
     NSMutableArray *arrDown = [[NSMutableArray alloc] init];
     [arrDown addObjectsFromArray:arg2];
     [arrDown addObject:button];
 
-    // Lọc bỏ nút "Premium"
+    // Loại bỏ nút "Premium"
     NSMutableArray *arrUp = [[NSMutableArray alloc] init];
     for (YTMAccountButton *yt_button in arg1) {
         if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
@@ -117,11 +120,9 @@
         }
     }
 
-    // Gọi hàm gốc với danh sách đã chỉnh sửa
     %orig(arrUp, arrDown);
 }
 %end
-
 
 @interface YTMAvatarAccountViewController : UIViewController
 @end
