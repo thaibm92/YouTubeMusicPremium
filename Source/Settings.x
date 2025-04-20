@@ -78,10 +78,10 @@
 %hook YTMAvatarAccountView
 
 - (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
-    // Tạo icon có kích thước và style giống biểu tượng hệ thống "Cài đặt"
+    // Tạo icon với config mảnh đều như biểu tượng "Cài đặt"
     UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(24, 24)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
-        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:22 weight:UIImageSymbolWeightLight];
+        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:22 weight:UIImageSymbolWeightRegular];
         UIImage *gearImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
 
         UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 24, 24)];
@@ -95,7 +95,7 @@
         [imageView.layer renderInContext:rendererContext.CGContext];
     }];
 
-    // Tạo nút "IOSMOD.NET"
+    // Tạo nút custom với icon ở trên
     YTMAccountButton *button = [[%c(YTMAccountButton) alloc] initWithTitle:@"IOSMOD.NET" identifier:@"ytmult" icon:icon actionBlock:^(BOOL arg4) {
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[YTMUltimateSettingsController alloc] init]];
         [nav setModalPresentationStyle:UIModalPresentationFullScreen];
@@ -104,15 +104,15 @@
 
     button.tintColor = [UIColor redColor];
 
-    // Nếu cần chỉnh font (tuỳ class hỗ trợ), thêm dòng sau:
+    // Nếu muốn chỉnh font chữ của label (nếu được), thêm dòng sau:
     // button.titleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightRegular];
 
-    // Thêm nút vào danh sách phía dưới
+    // Thêm nút custom vào danh sách phía dưới
     NSMutableArray *arrDown = [[NSMutableArray alloc] init];
     [arrDown addObjectsFromArray:arg2];
     [arrDown addObject:button];
 
-    // Loại bỏ nút "Premium"
+    // Lọc nút Premium (ẩn nó đi)
     NSMutableArray *arrUp = [[NSMutableArray alloc] init];
     for (YTMAccountButton *yt_button in arg1) {
         if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
