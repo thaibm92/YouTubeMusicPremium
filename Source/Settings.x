@@ -29,13 +29,14 @@
 @end
 
 %group SettingsPage
+/*
 %hook YTMAvatarAccountView
 
 - (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
-    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(20, 20)];
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(22, 22)];
     UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
         UIImage *flameImage = [UIImage systemImageNamed:@"gearshape"];
-        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 22, 22)];
         UIImageView *flameImageView = [[UIImageView alloc] initWithImage:flameImage];
         flameImageView.contentMode = UIViewContentModeScaleAspectFit;
         flameImageView.clipsToBounds = YES;
@@ -73,6 +74,54 @@
     %orig(arrUp, arrDown);
 }
 %end
+*/
+%hook YTMAvatarAccountView
+
+- (void)setAccountMenuUpperButtons:(id)arg1 lowerButtons:(id)arg2 {
+    UIGraphicsImageRenderer *renderer = [[UIGraphicsImageRenderer alloc] initWithSize:CGSizeMake(20, 20)];
+    UIImage *icon = [renderer imageWithActions:^(UIGraphicsImageRendererContext * _Nonnull rendererContext) {
+        // Sử dụng cấu hình giống biểu tượng "Cài đặt"
+        UIImageSymbolConfiguration *config = [UIImageSymbolConfiguration configurationWithPointSize:20 weight:UIImageSymbolWeightThin];
+        UIImage *gearImage = [[UIImage systemImageNamed:@"gearshape"] imageByApplyingSymbolConfiguration:config];
+
+        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        UIImageView *gearImageView = [[UIImageView alloc] initWithImage:gearImage];
+        gearImageView.contentMode = UIViewContentModeScaleAspectFit;
+        gearImageView.clipsToBounds = YES;
+        gearImageView.tintColor = [UIColor whiteColor];
+        gearImageView.frame = imageView.bounds;
+
+        [imageView addSubview:gearImageView];
+        [imageView.layer renderInContext:rendererContext.CGContext];
+    }];
+
+    // Tạo nút "IOSMOD.NET"
+    YTMAccountButton *button = [[%c(YTMAccountButton) alloc] initWithTitle:@"IOSMOD.NET" identifier:@"ytmult" icon:icon actionBlock:^(BOOL arg4) {
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[YTMUltimateSettingsController alloc] init]];
+        [nav setModalPresentationStyle:UIModalPresentationFullScreen];
+        [self._viewControllerForAncestor presentViewController:nav animated:YES completion:nil];
+    }];
+
+    button.tintColor = [UIColor redColor];
+
+    // Thêm nút vào danh sách dưới
+    NSMutableArray *arrDown = [[NSMutableArray alloc] init];
+    [arrDown addObjectsFromArray:arg2];
+    [arrDown addObject:button];
+
+    // Lọc bỏ nút "Premium"
+    NSMutableArray *arrUp = [[NSMutableArray alloc] init];
+    for (YTMAccountButton *yt_button in arg1) {
+        if (![[yt_button.titleLabel text] containsString:@"Premium"]) {
+            [arrUp addObject:yt_button];
+        }
+    }
+
+    // Gọi hàm gốc với danh sách đã chỉnh sửa
+    %orig(arrUp, arrDown);
+}
+%end
+
 
 @interface YTMAvatarAccountViewController : UIViewController
 @end
