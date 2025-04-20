@@ -123,7 +123,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"settingsSection"];
 
         NSArray *settingsData = @[
-            @{@"title": LOC(@"PREMIUM_SETTINGS"), @"image": @"pencil.slash"},
+            @{@"title": LOC(@"PREMIUM_SETTINGS"), @"image": @"gearshape"},
             @{@"title": LOC(@"PLAYER_SETTINGS"), @"image": @"play.rectangle"},
             @{@"title": LOC(@"THEME_SETTINGS"), @"image": @"paintbrush"},
             @{@"title": LOC(@"NAVBAR_SETTINGS"), @"image": @"sidebar.trailing"},
