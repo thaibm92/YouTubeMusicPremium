@@ -28,13 +28,13 @@ jobs:
     permissions:
       contents: write
 
-      steps:
+    steps:
       - name: Checkout Main
         uses: actions/checkout@v4.1.1
         with:
           path: main
           submodules: recursive
-          
+
       - name: Install Dependencies
         run: brew install ldid dpkg make
               
