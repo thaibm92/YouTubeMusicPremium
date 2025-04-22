@@ -28,16 +28,12 @@ jobs:
     permissions:
       contents: write
 
-    steps:
-      - uses: actions/checkout@main
-
-      - name: Checkout RootHide/theos
-        uses: actions/checkout@main
+   steps:
+      - name: Checkout Main
+        uses: actions/checkout@v4.1.1
         with:
-          repository: RootHide/theos
-          ref: master
+          path: main
           submodules: recursive
-          path: theos
 
       - name: Install Dependencies
         run: brew install ldid dpkg make
